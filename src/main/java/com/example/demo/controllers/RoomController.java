@@ -27,7 +27,7 @@ public class RoomController {
 //    obj: data, message, status
 //    Room findById(@PathVariable String id) {
     ResponseEntity<ResponseObject> findById(@PathVariable String id) {
-        Optional<Room> foundRoom = repository.findById(id);
+        Optional<Room> foundRoom = repository.findById(id); //Optional = co the null
         if (foundRoom.isPresent()) {
             return ResponseEntity.status(HttpStatus.OK).body(
                     new ResponseObject("ok", "Query product successfully", foundRoom)
